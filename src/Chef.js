@@ -1,7 +1,12 @@
 class Chef {
-  constructor() {
-    
+  constructor(name) {
+    this.name = name || "Hannah"
+   
   }
+  // createRestaurent(){
+
+  // }
+
 }
 
 module.exports = Chef;
