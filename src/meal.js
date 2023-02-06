@@ -1,37 +1,43 @@
 function nameMenuItem(food) {
-  return `Delicious ${food}`
-
+  return `Delicious ${food}`;
 }
 
 function createMenuItem(food, price, type) {
   var menuItem = {
     name: food,
     price: price,
-    type: type
+    type: type,
+  };
+  return menuItem;
+}
+
+function addIngredients(topping, ingredients) {
+  if (ingredients.includes(topping) === false) {
+    ingredients.push(topping);
   }
-  return menuItem
 }
 
-function addIngredients(topping, ingredients){
-  
-  
-  if (ingredients.includes(topping) === false){
-     ingredients.push(topping)
-  } 
-  // if a topping is repeated, do not add it to array
-  
+function formatPrice(formattedPrice) {
+  return `$${formattedPrice}`;
 }
 
-function formatPrice(formattedPrice){
-  console.log(formattedPrice)
- return `$${formattedPrice}`
+function decreasePrice(decreasedPrice, newPrice) {
+  var newPrice = 5.4;
+  if (newPrice * decreasedPrice) {
+    return newPrice;
+  }
+  console.log(decreasedPrice, newPrice);
 }
 
-function decreasePrice(){
-
+function createRecipe(titleString, ingredientsArray, typeString) {
+  console.log(titleString, ingredientsArray, typeString);
+  var recipe = {
+    title: titleString,
+    ingredients: ingredientsArray,
+    type: typeString,
+  };
+  return recipe;
 }
-
-
 
 module.exports = {
   nameMenuItem,
@@ -39,7 +45,5 @@ module.exports = {
   addIngredients,
   formatPrice,
   decreasePrice,
-  // createRecipe
-}
-
-
+  createRecipe,
+};
